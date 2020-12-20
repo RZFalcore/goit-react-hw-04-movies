@@ -1,0 +1,27 @@
+.nav {
+    margin: 0 auto;
+    padding: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgb(39, 124, 236);
+}
+
+.link {
+    color: white;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 20px;
+    margin: 10px 20px;
+    text-decoration: none;
+}
+
+.linkActive {
+    composes: link;
+    color: rgb(39, 223, 236)
+}
+
+.link:hover {
+    color: rgb(39, 223, 236)
+}
