@@ -25,9 +25,9 @@ export function getMovieWithID(id) {
     });
 }
 
-export function getMoviePoster(id, posterPath) {
+export function getMoviePoster(posterPath) {
   return axios
-    .get(`https://api.themoviedb.org/3/movie/${id}${posterPath}`)
+    .get(`https://image.tmdb.org/t/p/w500${posterPath}`)
     .then((res) => {
       console.log(res);
       return res.data;

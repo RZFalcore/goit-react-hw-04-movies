@@ -1,10 +1,9 @@
 import React, { Component, Suspense } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 
-import { HomePage, MoviePage } from "../../Pages/lazyPages";
-
-import MovieDetailsPage from "../../Pages/MovieDetailsPage/MovieDetailsPage";
+import { HomePage, MoviePage, MovieDetailsPage } from "../../Pages/lazyPages";
 import Navigation from "../Navigation/Navigation";
+
 
 import "./App.module.css";
 
