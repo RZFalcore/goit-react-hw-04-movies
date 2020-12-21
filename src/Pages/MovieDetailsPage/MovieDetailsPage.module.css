@@ -1,0 +1,23 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.pageTitle {
+    margin: 10px;
+}
+
+.movieHeader {
+    margin: 0px 10px;
+    padding: 0px;
+    display: flex;
+}
+
+.movieInfo {
+    margin: 10px 10px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}

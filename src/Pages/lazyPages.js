@@ -8,5 +8,7 @@ export const MoviePage = lazy(() =>
 );
 
 export const MovieDetailsPage = lazy(() =>
-  import("./MovieDetailsPage" /* webpackChunkName: "movie-details-page" */)
+  import(
+    "./MovieDetailsPage/MovieDetailsPage" /* webpackChunkName: "movie-details-page" */
+  )
 );
