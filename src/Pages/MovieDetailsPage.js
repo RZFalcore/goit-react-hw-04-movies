@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Suspense } from "react";
 
 import MovieDetails from "../Components/MovieDetails/MovieDetails";
 import MovieMoreInfo from "../Components/MovieMoreInfo/MovieMoreInfo";
@@ -21,7 +21,9 @@ export default class MovieDetailsPage extends Component {
     return (
       <div>
         {movie && <MovieDetails movie={movie} />}
-        <MovieMoreInfo />
+        <Suspense fallback={<p>Loading...</p>}>
+          <MovieMoreInfo />
+        </Suspense>
       </div>
     );
   }
