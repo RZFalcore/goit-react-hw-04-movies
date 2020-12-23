@@ -25,14 +25,28 @@ export function getMovieWithID(id) {
     });
 }
 
-export function getMoviePoster(posterPath) {
+export function getMovieCredits(id) {
   return axios
-    .get(`https://image.tmdb.org/t/p/w500${posterPath}`)
+    .get(`https://api.themoviedb.org/3/movie/${id}/credits${key}`)
     .then((res) => {
-      console.log(res);
       return res.data;
     })
     .catch((err) => {
       console.log(err);
     });
+}
+
+export function getMoviePoster(posterPath) {
+  if (posterPath) {
+    return axios
+      .get(`https://image.tmdb.org/t/p/w500${posterPath}`)
+      .then((res) => {
+        return res.data;
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  } else {
+    return "";
+  }
 }
