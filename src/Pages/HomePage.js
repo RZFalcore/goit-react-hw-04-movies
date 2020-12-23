@@ -11,7 +11,6 @@ export default class HomePage extends Component {
   }
 
   render() {
-    console.log(this.state.movies);
     const { movies } = this.state;
     return (
       <div>

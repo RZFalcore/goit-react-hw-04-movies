@@ -14,3 +14,7 @@ export const MovieDetailsPage = lazy(() =>
 export const Cast = lazy(() =>
   import("../Components/Cast/Cast" /* webpackChunkName: "cast" */)
 );
+
+export const Reviews = lazy(() =>
+  import("../Components/Reviews/Reviews" /* webpackChunkName: "reviews" */)
+);

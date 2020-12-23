@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 
 import CastMember from "../CastMember/CastMember";
-import { getMovieCredits } from "../../Services/API";
 
+import { getMovieCredits } from "../../Services/API";
 class Cast extends Component {
   state = { cast: null };
 

@@ -16,9 +16,8 @@ export default class MovieDetailsPage extends Component {
   }
 
   render() {
-    const { movie, credits } = this.state;
-    const { url, path } = this.props.match;
-    console.log(url, path);
+    const { movie } = this.state;
+    
     return (
       <div>
         {movie && <MovieDetails movie={movie} />}

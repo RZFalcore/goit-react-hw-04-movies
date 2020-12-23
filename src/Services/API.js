@@ -14,7 +14,6 @@ export function getMovies() {
 }
 
 export function getMovieWithID(id) {
-  console.log("getMovieWithID id:", id);
   return axios
     .get(`https://api.themoviedb.org/3/movie/${id}${key}`)
     .then((res) => {
@@ -28,6 +27,17 @@ export function getMovieWithID(id) {
 export function getMovieCredits(id) {
   return axios
     .get(`https://api.themoviedb.org/3/movie/${id}/credits${key}`)
+    .then((res) => {
+      return res.data;
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+}
+
+export function getMovieReviews(id) {
+  return axios
+    .get(`https://api.themoviedb.org/3/movie/${id}/reviews${key}`)
     .then((res) => {
       return res.data;
     })

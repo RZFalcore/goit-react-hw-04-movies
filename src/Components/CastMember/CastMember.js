@@ -4,14 +4,19 @@ import { getImgUrl } from "../../utils/imagePathFinder";
 
 const CastMember = ({ info }) => {
   const { name, profile_path, character } = info;
+  const url = getImgUrl(profile_path);
   return (
     <>
-      <h3>{name}</h3>
-      <img src={getImgUrl(profile_path)} alt={name} height="120px" />
-      {character && (
-        <p>
-          as: <i>{character}</i>
-        </p>
+      {url && (
+        <>
+          <h3>{name}</h3>
+          <img src={url} alt={name} height="120px" />
+          {character && (
+            <p>
+              as: <i>{character}</i>
+            </p>
+          )}
+        </>
       )}
     </>
   );

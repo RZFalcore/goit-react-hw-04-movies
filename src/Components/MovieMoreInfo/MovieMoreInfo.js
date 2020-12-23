@@ -1,8 +1,9 @@
 import React from "react";
 import { Switch, Route, Link, withRouter } from "react-router-dom";
-import { Cast } from "../../Pages/lazyPages";
 
-const MovieMoreInfo = ({ credits, match }) => {
+import { Cast, Reviews } from "../../Pages/lazyPages";
+
+const MovieMoreInfo = ({ match }) => {
   const { url, path } = match;
 
   return (
@@ -14,10 +15,14 @@ const MovieMoreInfo = ({ credits, match }) => {
         <li>
           <Link to={`${url}/reviews`}>Reviews</Link>
         </li>
-      </ul>
+       </ul>
+          
       <Switch>
         <Route path={`${path}/cast`}>
-          <Cast cast={credits} />
+          <Cast />
+        </Route>
+        <Route path={`${path}/reviews`}>
+            <Reviews />
         </Route>
       </Switch>
     </div>
