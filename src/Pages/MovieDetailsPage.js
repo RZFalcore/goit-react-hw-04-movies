@@ -15,15 +15,24 @@ export default class MovieDetailsPage extends Component {
       .catch(console.log);
   }
 
+  handleReturn = () => {
+    const { history, location } = this.props;    
+    if (location.state) {
+      return history.push(location.state.from);
+    }
+    history.push("/");
+  }
+
   render() {
     const { movie } = this.state;
     
     return (
       <div>
-        {movie && <MovieDetails movie={movie} />}
         <Suspense fallback={<p>Loading...</p>}>
+          {movie && <MovieDetails {...movie} goBack={this.handleReturn} />}
           <MovieMoreInfo />
         </Suspense>
+  
       </div>
     );
   }

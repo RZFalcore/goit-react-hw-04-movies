@@ -3,15 +3,15 @@ import styles from "./MovieDetails.module.css";
 
 import { getImgUrl } from "../../utils/imagePathFinder";
 
-const MovieDetails = ({ movie }) => {
-  const {
-    title,
-    release_date,
-    vote_average,
-    overview,
-    genres,
-    poster_path,
-  } = movie;
+const MovieDetails = ({
+  title,
+  release_date,
+  vote_average,
+  overview,
+  genres,
+  poster_path,
+  goBack,
+}) => {
   const url = getImgUrl(poster_path);
 
   return (
@@ -31,6 +31,7 @@ const MovieDetails = ({ movie }) => {
               <span key={genre.id}>{genre.name} </span>
             ))}
           </p>
+          <button onClick={goBack}>Go back</button>
         </div>
       </div>
     </>

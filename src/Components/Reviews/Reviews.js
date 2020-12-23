@@ -17,7 +17,6 @@ class Reviews extends Component {
 
   render() {
     const { reviews } = this.state;
-    console.log(reviews);
     return (
       <ul>
         {reviews.length > 0 ? (
