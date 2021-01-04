@@ -1,10 +1,15 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
 
 import CastMember from "../CastMember/CastMember";
 
 import { getMovieCredits } from "../../Services/API";
 class Cast extends Component {
+  static propTypes = {
+    match: PropTypes.object.isRequired,
+  };
+
   state = { cast: null };
 
   componentDidMount() {
@@ -22,7 +27,7 @@ class Cast extends Component {
         {cast &&
           cast.map((castMember) => (
             <li key={castMember.id}>
-              <CastMember info={castMember} />
+              <CastMember {...castMember} />
             </li>
           ))}
       </ul>

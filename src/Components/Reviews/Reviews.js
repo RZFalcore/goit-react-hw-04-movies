@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
 
 import Review from "../Review/Review";
@@ -6,6 +7,10 @@ import Review from "../Review/Review";
 import { getMovieReviews } from "../../Services/API";
 
 class Reviews extends Component {
+  static propTypes = {
+    match: PropTypes.object.isRequired,
+  };
+
   state = { reviews: [] };
 
   componentDidMount() {

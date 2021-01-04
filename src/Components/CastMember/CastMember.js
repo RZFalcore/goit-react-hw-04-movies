@@ -1,9 +1,9 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import { getImgUrl } from "../../utils/imagePathFinder";
 
-const CastMember = ({ info }) => {
-  const { name, profile_path, character } = info;
+const CastMember = ({ name, profile_path, character }) => {
   const url = getImgUrl(profile_path);
   return (
     <>
@@ -20,6 +20,12 @@ const CastMember = ({ info }) => {
       )}
     </>
   );
+};
+
+CastMember.propTypes = {
+  name: PropTypes.string.isRequired,
+  profile_path: PropTypes.string,
+  character: PropTypes.string.isRequired,
 };
 
 export default CastMember;

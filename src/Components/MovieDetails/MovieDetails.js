@@ -1,7 +1,8 @@
 import React from "react";
-import styles from "./MovieDetails.module.css";
+import PropTypes from "prop-types";
 
 import { getImgUrl } from "../../utils/imagePathFinder";
+import styles from "./MovieDetails.module.css";
 
 const MovieDetails = ({
   title,
@@ -36,6 +37,21 @@ const MovieDetails = ({
       </div>
     </>
   );
+};
+
+MovieDetails.propTypes = {
+  title: PropTypes.string.isRequired,
+  release_date: PropTypes.string.isRequired,
+  vote_average: PropTypes.number.isRequired,
+  overview: PropTypes.string.isRequired,
+  genres: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  poster_path: PropTypes.string.isRequired,
+  goBack: PropTypes.func.isRequired,
 };
 
 export default MovieDetails;
